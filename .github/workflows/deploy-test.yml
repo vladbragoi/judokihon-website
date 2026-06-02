@@ -35,4 +35,6 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
           server-dir: ./test/
-          protocol: ftp 
+          protocol: ftp
+          state-name: sync-state.json
+          log-level: verbose
