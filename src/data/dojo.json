@@ -1,0 +1,13 @@
+{
+  "instructorsImages": [
+    { "src": "images/paolino.png", "alt": "Paolino Tarocco" },
+    { "src": "images/marco.png", "alt": "Marco Bertolotto" },
+    { "src": "images/giovanni e thomas.png", "alt": "Giovanni Borgogna e Thomas Marangoni" }
+  ],
+  "gymImages": [
+    { "src": "gallery/images/entrata.jpg", "alt": "Entrata Dojo" },
+    { "src": "images/tatami(HDR).jpg", "alt": "Il Tatami" },
+    { "src": "images/manutenzione.png", "alt": "Manutenzione" },
+    { "src": "images/tatami.png", "alt": "Tatami" }
+  ]
+}

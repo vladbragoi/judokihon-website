@@ -1,0 +1,23 @@
+{
+  "blackBelts": [
+    { "name": "Paolino Tarocco", "dan": "6° Dan", "year": 2021, "role": "Maestro — Fondatore" },
+    { "name": "Paolino Tarocco", "dan": "5° Dan", "year": 2007, "role": "Maestro — Fondatore" },
+    { "name": "Marco Bertolotto", "dan": "5° Dan", "year": 2015, "role": "Maestro — Fondatore" },
+    { "name": "Marco Bertolotto", "dan": "4° Dan", "year": 2008, "role": "Maestro — Fondatore" },
+    { "name": "Thomas Marangoni", "dan": "3° Dan", "year": 2015, "role": "Allenatore" },
+    { "name": "Vladislav Bragoi", "dan": "2° Dan", "year": 2019, "role": "Atleta" },
+    { "name": "Giovanni Borgogna", "dan": "2° Dan", "year": 2016, "role": "Aspirante Allenatore" },
+    { "name": "Federico Chiaramonte", "dan": "2° Dan", "year": 2015, "role": "Atleta" },
+    { "name": "Kevin De Paoli", "dan": "1° Dan", "year": 2016, "role": "Atleta" },
+    { "name": "Vladislav Bragoi", "dan": "1° Dan", "year": 2015, "role": "Atleta" },
+    { "name": "Giovanni Borgogna", "dan": "1° Dan", "year": 2015, "role": "Aspirante Allenatore" },
+    { "name": "Federico Chiaramonte", "dan": "1° Dan", "year": 2014, "role": "Atleta" }
+  ],
+  "allVideos": [
+    { "id": "R9PIRonRuUA", "title": "Thomas: 3° Dan - 2015" },
+    { "id": "1-uHxWeo6wc", "title": "Giovanni: 2° Dan - 2015" },
+    { "id": "G6Us6uQGuFE", "title": "Kevin: 1° Dan - 2015" },
+    { "id": "lXxwRGTcPNY", "title": "Federico: 2° Dan - 2014" },
+    { "id": "VpfT3guzXeY", "title": "Vlad: 1° Dan - 2014" }
+  ]
+}

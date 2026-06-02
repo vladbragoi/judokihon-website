@@ -5,15 +5,15 @@
 
 :root {
   /* Palette */
-  --bg-primary: #f8f6f3;      /* Warm rice paper */
+  --bg-primary: #f8f6f3; /* Warm rice paper */
   --bg-secondary: #ffffff;
-  --bg-dark: #1a1a1a;          /* Sumi ink black */
+  --bg-dark: #1a1a1a; /* Sumi ink black */
   --text-primary: #1a1a1a;
   --text-secondary: #5a5a5a;
   --text-light: rgba(255, 255, 255, 0.85);
-  --accent-color: #ba1826;     /* Crimson / Hinomaru */
+  --accent-color: #ba1826; /* Crimson / Hinomaru */
   --accent-hover: #9b1420;
-  --gold-accent: #d4af37;      /* Subtle Gold */
+  --gold-accent: #d4af37; /* Subtle Gold */
   --border-color: rgba(0, 0, 0, 0.08);
 
   /* Typography */
@@ -57,7 +57,12 @@ body {
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-serif);
   font-weight: 600;
   color: var(--text-primary);
@@ -117,8 +122,14 @@ img {
    ANIMATIONS
    =========================== */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-fade-in {

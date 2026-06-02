@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { FileText, Download, Calendar, Users as UsersIcon } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 import './Pages.css';
 
 const ScrollSection = ({ children, className = '', delay = 0 }) => {
@@ -41,7 +42,20 @@ function getBambiniStartDate(year) {
 
 function formatDate(d) {
   const giorni = ['Domenica', 'Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì', 'Sabato'];
-  const mesi = ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'];
+  const mesi = [
+    'Gennaio',
+    'Febbraio',
+    'Marzo',
+    'Aprile',
+    'Maggio',
+    'Giugno',
+    'Luglio',
+    'Agosto',
+    'Settembre',
+    'Ottobre',
+    'Novembre',
+    'Dicembre',
+  ];
   return `${giorni[d.getDay()]} ${d.getDate()} ${mesi[d.getMonth()]} ${d.getFullYear()}`;
 }
 
@@ -57,9 +71,15 @@ const Schedule = () => {
   const annoMinIscrizione = sportYear - 6;
   const stagione = `${sportYear}-${sportYear + 1}`;
 
-
   return (
     <div className="page-container">
+      <Helmet>
+        <title>Orari e Corsi - Judo Kihon Bovolone</title>
+        <meta
+          name="description"
+          content="Scopri gli orari degli allenamenti di Judo per bambini, ragazzi e adulti a Bovolone. Scarica il modulo di iscrizione."
+        />
+      </Helmet>
       <section className="page-header page-header--red">
         <div className="page-header-pattern"></div>
         <div className="page-header-content">
@@ -76,7 +96,9 @@ const Schedule = () => {
             <div className="corsi-cards">
               <div className="course-card">
                 <div className="course-card-header">
-                  <div className="corso-icon"><UsersIcon size={24} /></div>
+                  <div className="corso-icon">
+                    <UsersIcon size={24} />
+                  </div>
                   <div>
                     <h3>Bambini e Ragazzi</h3>
                     <span className="badge">Dai 6 agli 11 anni</span>
@@ -90,14 +112,19 @@ const Schedule = () => {
                   </div>
                 </div>
                 <p className="note">
-                  Gli allenamenti del corso Bambini e ragazzi ripartono <strong>{bambiniDate}</strong>.
-                  <br />Si accettano le iscrizioni dei bambini dall'anno <strong>{annoMinIscrizione}</strong>.
+                  Gli allenamenti del corso Bambini e ragazzi ripartono{' '}
+                  <strong>{bambiniDate}</strong>.
+                  <br />
+                  Si accettano le iscrizioni dei bambini dall'anno{' '}
+                  <strong>{annoMinIscrizione}</strong>.
                 </p>
               </div>
 
               <div className="course-card">
                 <div className="course-card-header">
-                  <div className="corso-icon"><UsersIcon size={24} /></div>
+                  <div className="corso-icon">
+                    <UsersIcon size={24} />
+                  </div>
                   <div>
                     <h3>Adulti</h3>
                     <span className="badge">Dai 12 anni in su</span>
@@ -110,7 +137,9 @@ const Schedule = () => {
                     <span className="orario-time">19:45 — 21:00</span>
                   </div>
                 </div>
-                <p className="note">Gli allenamenti Adulti ripartono <strong>{adultiDate}</strong>.</p>
+                <p className="note">
+                  Gli allenamenti Adulti ripartono <strong>{adultiDate}</strong>.
+                </p>
               </div>
             </div>
           </ScrollSection>
@@ -118,18 +147,30 @@ const Schedule = () => {
           <ScrollSection className="iscrizione-section">
             <h2 className="section-title text-left brush-stroke-heading">Come Iscriversi</h2>
             <p className="text-content">
-              Per iscriversi basta compilare con i propri dati il modulo d'iscrizione e presentarlo in palestra, assieme al <strong>certificato medico di buona salute</strong> per attività non agonistica.
+              Per iscriversi basta compilare con i propri dati il modulo d'iscrizione e presentarlo
+              in palestra, assieme al <strong>certificato medico di buona salute</strong> per
+              attività non agonistica.
             </p>
 
             <div className="document-links">
-              <a href="/avviso corsi stagione 2024-2025.pdf" target="_blank" rel="noreferrer" className="doc-link">
+              <a
+                href="/avviso corsi stagione 2024-2025.pdf"
+                target="_blank"
+                rel="noreferrer"
+                className="doc-link"
+              >
                 <FileText size={22} />
                 <div>
                   <span className="doc-title">Volantino Stagione {stagione}</span>
                   <span className="doc-subtitle">Visualizza il volantino informativo</span>
                 </div>
               </a>
-              <a href="/Domanda di ammissione a socio 2024-2025.pdf" target="_blank" rel="noreferrer" className="doc-link">
+              <a
+                href="/Domanda di ammissione a socio 2024-2025.pdf"
+                target="_blank"
+                rel="noreferrer"
+                className="doc-link"
+              >
                 <FileText size={22} />
                 <div>
                   <span className="doc-title">Modulo Iscrizione {stagione}</span>

@@ -23,11 +23,15 @@ const CookieBanner = () => {
     <div className="cookie-banner">
       <div className="cookie-content">
         <p>
-          Questo sito utilizza i cookie per migliorare servizi e l'esperienza dei lettori.
-          Se decidi di continuare la navigazione consideriamo che accetti il loro uso.
-          <Link to="/privacy-policy" className="cookie-link">Maggiori Informazioni</Link>
+          Questo sito utilizza i cookie per migliorare servizi e l'esperienza dei lettori. Se decidi
+          di continuare la navigazione consideriamo che accetti il loro uso.
+          <Link to="/privacy-policy" className="cookie-link">
+            Maggiori Informazioni
+          </Link>
         </p>
-        <button onClick={acceptCookies} className="btn-primary cookie-btn">Accetta e Chiudi</button>
+        <button onClick={acceptCookies} className="btn-primary cookie-btn">
+          Accetta e Chiudi
+        </button>
       </div>
     </div>
   );
