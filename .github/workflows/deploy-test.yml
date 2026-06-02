@@ -1,0 +1,39 @@
+name: Deploy Test (env/test)
+
+on:
+  push:
+    branches:
+      - env/test
+
+jobs:
+  build-and-deploy:
+    name: Build & Deploy Test via FTP
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del codice
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Installa dipendenze
+        run: npm ci
+
+      - name: Compila il sito
+        run: npm run build
+        env:
+          VITE_BASE_URL: /test/
+
+      - name: Pubblica su Aruba via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./dist/
+          server-dir: /test/
+          protocol: ftp 
+          passive: true
