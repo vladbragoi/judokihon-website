@@ -37,5 +37,3 @@ jobs:
           local-dir: ./dist/
           server-dir: ./judokihon.it/
           protocol: ftp
-          state-name: sync-state.json
-          log-level: verbose
