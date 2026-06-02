@@ -12,12 +12,12 @@ jobs:
 
     steps:
       - name: Checkout del codice
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Installa dipendenze
         run: npm ci
@@ -28,7 +28,7 @@ jobs:
           VITE_BASE_URL: /test/
 
       - name: Pubblica su Aruba via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
@@ -36,4 +36,3 @@ jobs:
           local-dir: ./dist/
           server-dir: /test/
           protocol: ftp 
-          passive: true
