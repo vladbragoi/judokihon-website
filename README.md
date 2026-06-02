@@ -41,16 +41,16 @@ L'aggiornamento diretto dei branch protetti è disabilitato. Qualsiasi modifica 
 ## 📝 Come Modificare i Contenuti
 
 ### 🥋 Aggiungere una Nuova Cintura Nera
-1. Apri il file `src/pages/CintureNere.jsx`.
-2. Trova l'array `cintureNere` all'inizio del file.
+1. Apri il file `src/pages/BlackBelts.jsx`.
+2. Trova l'array `blackBelts` all'inizio del file.
 3. Aggiungi un nuovo oggetto rispettando questo formato:
    ```javascript
-   { nome: 'Nome Cognome', dan: '1° Dan', anno: 2024, ruolo: 'Atleta' }
+   { name: 'Nome Cognome', dan: '1° Dan', year: 2024, role: 'Atleta' }
    ```
    *I gradi superiori vanno aggiunti mantenendo l'ordinamento decrescente, tenendo lo storico per ogni individuo (una card per ogni Dan).*
 
 ### 📹 Aggiungere un Nuovo Video (Esami Dan)
-1. Apri il file `src/pages/CintureNere.jsx`.
+1. Apri il file `src/pages/BlackBelts.jsx`.
 2. Trova l'array `allVideos`.
 3. Aggiungi un nuovo oggetto contenente l'ID del video di YouTube (la stringa dopo `v=`) e il titolo:
    ```javascript
@@ -58,8 +58,8 @@ L'aggiornamento diretto dei branch protetti è disabilitato. Qualsiasi modifica 
    ```
 
 ### 📸 Aggiungere una Nuova Foto alla Galleria
-1. Inserisci il file originale dell'immagine all'interno della cartella `public/images/` (oppure `public/fotogalleria/images/`).
-2. Apri il file `src/pages/Galleria.jsx`.
+1. Inserisci il file originale dell'immagine all'interno della cartella `public/images/` (oppure `public/gallery/images/`).
+2. Apri il file `src/pages/Gallery.jsx`.
 3. Aggiungi la nuova foto all'array `images` usando questa sintassi (la macro `import.meta.env.BASE_URL` garantisce che il link non si rompa passando da Test a Produzione):
    ```javascript
    { src: `${import.meta.env.BASE_URL}images/NOME_FOTO.jpg`, alt: 'Descrizione della foto' }

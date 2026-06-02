@@ -24,7 +24,7 @@ const instructorsImages = [
 ];
 
 const gymImages = [
-  { src: `${import.meta.env.BASE_URL}fotogalleria/images/entrata.jpg`, alt: 'Entrata Dojo' },
+  { src: `${import.meta.env.BASE_URL}gallery/images/entrata.jpg`, alt: 'Entrata Dojo' },
   { src: `${import.meta.env.BASE_URL}images/tatami(HDR).jpg`, alt: 'Il Tatami' },
   { src: `${import.meta.env.BASE_URL}images/manutenzione.png`, alt: 'Manutenzione' },
   { src: `${import.meta.env.BASE_URL}images/tatami.png`, alt: 'Tatami' },
