@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { ZoomIn } from 'lucide-react';
 import ImageLightbox from '../components/ImageLightbox';
+import { Helmet } from 'react-helmet-async';
+import data from '../data/gallery.json';
 import './Pages.css';
 
 const ScrollSection = ({ children, className = '' }) => {
@@ -13,26 +15,18 @@ const ScrollSection = ({ children, className = '' }) => {
   );
 };
 
-const images = [
-  { src: `${import.meta.env.BASE_URL}images/staff tecnico.JPG`, alt: 'Staff Tecnico' },
-  { src: `${import.meta.env.BASE_URL}images/16-12-11.jpg`, alt: '16 dicembre 2011' },
-  { src: `${import.meta.env.BASE_URL}images/anno_1970.jpg`, alt: 'Anno 1970' },
-  { src: `${import.meta.env.BASE_URL}gallery/images/16-12-11 tutti.jpg`, alt: '16 dicembre 2011 — Maestri e Allievi' },
-  { src: `${import.meta.env.BASE_URL}gallery/images/HJUDO 011.jpg`, alt: 'I nostri ragazzi' },
-  { src: `${import.meta.env.BASE_URL}gallery/images/HJUDO 003.jpg`, alt: 'Allenamento in palestra' },
-  { src: `${import.meta.env.BASE_URL}gallery/images/HJUDO 005.jpg`, alt: 'Tecnica Judo' },
-  { src: `${import.meta.env.BASE_URL}gallery/images/Gustavo, Paolino e Giancarlo.jpg`, alt: 'G. Zocca, G. Salardi e P. Tarocco' },
-  { src: `${import.meta.env.BASE_URL}images/maestri_storici.JPG`, alt: 'Maestri Storici (C. Croceri, C. Barioli, G. Salardi, G. Tomelleri)' },
-  { src: `${import.meta.env.BASE_URL}images/JUD PAL BOV 027.jpg`, alt: 'Lo staff' },
-  { src: `${import.meta.env.BASE_URL}gallery/images/tatami.jpg`, alt: 'Tatami' },
-  { src: `${import.meta.env.BASE_URL}gallery/images/palestra.jpg`, alt: 'Palestra' },
-];
-
 const Gallery = () => {
   const [lightboxIndex, setLightboxIndex] = useState(-1);
 
   return (
     <div className="page-container">
+      <Helmet>
+        <title>Galleria - Judo Kihon Bovolone</title>
+        <meta
+          name="description"
+          content="Foto della palestra, degli eventi e dei ragazzi dell'A.S.D. Judo Kihon Bovolone."
+        />
+      </Helmet>
       <section className="page-header page-header--red">
         <div className="page-header-pattern"></div>
         <div className="page-header-content">
@@ -45,13 +39,9 @@ const Gallery = () => {
       <section className="section">
         <ScrollSection>
           <div className="gallery-masonry">
-            {images.map((img, idx) => (
-              <div
-                key={idx}
-                className="gallery-item"
-                onClick={() => setLightboxIndex(idx)}
-              >
-                <img src={img.src} alt={img.alt} loading="lazy" />
+            {data.images.map((img, idx) => (
+              <div key={idx} className="gallery-item" onClick={() => setLightboxIndex(idx)}>
+                <img src={`${import.meta.env.BASE_URL}${img.src}`} alt={img.alt} loading="lazy" />
                 <div className="gallery-overlay">
                   <ZoomIn size={28} />
                   <span>{img.alt}</span>
@@ -64,7 +54,10 @@ const Gallery = () => {
 
       {lightboxIndex >= 0 && (
         <ImageLightbox
-          images={images}
+          images={data.images.map((img) => ({
+            ...img,
+            src: `${import.meta.env.BASE_URL}${img.src}`,
+          }))}
           startIndex={lightboxIndex}
           onClose={() => setLightboxIndex(-1)}
         />

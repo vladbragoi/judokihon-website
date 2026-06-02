@@ -32,7 +32,11 @@ const Header = () => {
     <header className={`header ${isScrolled ? 'header--scrolled' : ''}`}>
       <div className="header-container">
         <Link to="/" className="logo-link" aria-label="Torna alla home">
-          <img src={`${import.meta.env.BASE_URL}images/logo-small.png`} alt="A.S.D. Judo Kihon Bovolone" className="logo" />
+          <img
+            src={`${import.meta.env.BASE_URL}images/logo-small.png`}
+            alt="A.S.D. Judo Kihon Bovolone"
+            className="logo"
+          />
           <div className="logo-text">
             <span className="logo-title">Judo Kihon Bovolone</span>
             <span className="logo-subtitle">Associazione Sportiva Dilettantistica</span>

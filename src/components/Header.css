@@ -60,7 +60,7 @@
   font-family: var(--font-serif);
   font-weight: 700;
   font-size: 1.6rem;
-  color: #4DAED1;
+  color: #4daed1;
   letter-spacing: 0.5px;
 }
 
@@ -68,14 +68,14 @@
   font-family: var(--font-sans);
   font-weight: 500;
   font-size: 0.75rem;
-  color: #4DAED1;
+  color: #4daed1;
   letter-spacing: 0.5px;
   text-transform: uppercase;
 }
 
 .logo-kanji {
   font-size: 1.2rem;
-  color: #4DAED1;
+  color: #4daed1;
   opacity: 0.5;
   letter-spacing: 3px;
   margin-left: 0.5rem;

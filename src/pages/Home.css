@@ -29,7 +29,10 @@
 
 .hero-overlay {
   position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0.35) 0%,
@@ -41,7 +44,10 @@
 
 .hero-pattern {
   position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   opacity: 0.03;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='20' fill='none' stroke='%23fff' stroke-width='0.5'/%3E%3C/svg%3E");
   z-index: 1;
@@ -67,7 +73,7 @@
   font-size: 3rem;
   margin-bottom: 1.5rem;
   color: #fff;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
   font-weight: 700;
   line-height: 1.2;
 }
@@ -129,7 +135,7 @@
   -webkit-backdrop-filter: blur(8px);
   text-align: left;
   border-radius: 0 8px 8px 0;
-  color: rgba(255,255,255,0.85);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 /* Scroll Indicator */
@@ -143,7 +149,7 @@
   flex-direction: column;
   align-items: center;
   gap: 0.3rem;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255, 255, 255, 0.5);
   font-size: 0.75rem;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -151,8 +157,13 @@
 }
 
 @keyframes gentleBounce {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(6px); }
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(6px);
+  }
 }
 
 /* Wave Transition */
@@ -203,12 +214,12 @@
   padding: 2rem;
   background: var(--bg-secondary, #fff);
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   height: 100%;
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(0,0,0,0.04);
+  border: 1px solid rgba(0, 0, 0, 0.04);
 }
 
 .card-accent {
@@ -224,7 +235,7 @@
 
 .quick-nav-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
 }
 
 .quick-nav-card:hover .card-accent {
@@ -290,7 +301,10 @@
 
 .cta-pattern {
   position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   opacity: 0.03;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='20' fill='none' stroke='%23fff' stroke-width='0.5'/%3E%3C/svg%3E");
   pointer-events: none;
@@ -310,7 +324,7 @@
 }
 
 .cta-content p {
-  color: rgba(255,255,255,0.65);
+  color: rgba(255, 255, 255, 0.65);
   font-size: 1.1rem;
   line-height: 1.7;
   margin-bottom: 2rem;
@@ -355,14 +369,14 @@
   font-weight: 600;
   font-size: 0.95rem;
   border-radius: 6px;
-  border: 2px solid rgba(255,255,255,0.3);
+  border: 2px solid rgba(255, 255, 255, 0.3);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   letter-spacing: 0.3px;
 }
 
 .btn-secondary:hover {
   border-color: #fff;
-  background: rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.08);
   transform: translateY(-2px);
 }
 
@@ -420,7 +434,7 @@
   position: relative;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
 }
 
 .welcome-image-frame {

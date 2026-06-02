@@ -7,7 +7,9 @@ const ImageLightbox = ({ images, startIndex = 0, onClose }) => {
 
   useEffect(() => {
     document.body.style.overflow = 'hidden';
-    return () => { document.body.style.overflow = ''; };
+    return () => {
+      document.body.style.overflow = '';
+    };
   }, []);
 
   useEffect(() => {
@@ -35,20 +37,38 @@ const ImageLightbox = ({ images, startIndex = 0, onClose }) => {
       </button>
       {images.length > 1 && (
         <>
-          <button className="img-lightbox-nav img-lightbox-prev" onClick={(e) => { e.stopPropagation(); goPrev(); }} aria-label="Precedente">
+          <button
+            className="img-lightbox-nav img-lightbox-prev"
+            onClick={(e) => {
+              e.stopPropagation();
+              goPrev();
+            }}
+            aria-label="Precedente"
+          >
             <ChevronLeft size={32} />
           </button>
-          <button className="img-lightbox-nav img-lightbox-next" onClick={(e) => { e.stopPropagation(); goNext(); }} aria-label="Successivo">
+          <button
+            className="img-lightbox-nav img-lightbox-next"
+            onClick={(e) => {
+              e.stopPropagation();
+              goNext();
+            }}
+            aria-label="Successivo"
+          >
             <ChevronRight size={32} />
           </button>
         </>
       )}
       <div className="img-lightbox-content" onClick={(e) => e.stopPropagation()}>
         <img src={images[currentIndex].src} alt={images[currentIndex].alt} />
-        {images[currentIndex].alt && <p className="img-lightbox-caption">{images[currentIndex].alt}</p>}
+        {images[currentIndex].alt && (
+          <p className="img-lightbox-caption">{images[currentIndex].alt}</p>
+        )}
       </div>
       {images.length > 1 && (
-        <div className="img-lightbox-counter">{currentIndex + 1} / {images.length}</div>
+        <div className="img-lightbox-counter">
+          {currentIndex + 1} / {images.length}
+        </div>
       )}
     </div>
   );
