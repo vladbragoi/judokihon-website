@@ -45,7 +45,7 @@ function formatDate(d) {
   return `${giorni[d.getDay()]} ${d.getDate()} ${mesi[d.getMonth()]} ${d.getFullYear()}`;
 }
 
-const OrariCorsi = () => {
+const Schedule = () => {
   const now = new Date();
   const currentYear = now.getFullYear();
   // Da giugno in poi mostra il nuovo anno sportivo (che inizia a settembre)
@@ -74,8 +74,8 @@ const OrariCorsi = () => {
           <ScrollSection>
             <h2 className="section-title text-left brush-stroke-heading">Orari di Allenamento</h2>
             <div className="corsi-cards">
-              <div className="corso-card">
-                <div className="corso-card-header">
+              <div className="course-card">
+                <div className="course-card-header">
                   <div className="corso-icon"><UsersIcon size={24} /></div>
                   <div>
                     <h3>Bambini e Ragazzi</h3>
@@ -95,8 +95,8 @@ const OrariCorsi = () => {
                 </p>
               </div>
 
-              <div className="corso-card">
-                <div className="corso-card-header">
+              <div className="course-card">
+                <div className="course-card-header">
                   <div className="corso-icon"><UsersIcon size={24} /></div>
                   <div>
                     <h3>Adulti</h3>
@@ -151,4 +151,4 @@ const OrariCorsi = () => {
   );
 };
 
-export default OrariCorsi;
+export default Schedule;

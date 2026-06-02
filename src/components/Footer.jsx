@@ -50,13 +50,13 @@ const Footer = () => {
               <li><Link to="/">Home</Link></li>
               <li><Link to="/il-dojo">Il Dojo</Link></li>
               <li><Link to="/orari-corsi">I Corsi</Link></li>
-              <li><Link to="/galleria">Galleria</Link></li>
-              <li><Link to="/contatti">Contatti</Link></li>
+              <li><Link to="/galleria">Gallery</Link></li>
+              <li><Link to="/contatti">Contact</Link></li>
             </ul>
           </div>
 
           <div className="footer-section">
-            <h4>Contatti</h4>
+            <h4>Contact</h4>
             <ul className="footer-contacts">
               <li><MapPin size={16} /> Via Piave, 1 — 37051 Bovolone (VR)</li>
               <li><Mail size={16} /> <a href="mailto:info@judokihon.it">info@judokihon.it</a></li>

@@ -28,7 +28,7 @@ const images = [
   { src: `${import.meta.env.BASE_URL}fotogalleria/images/palestra.jpg`, alt: 'Palestra' },
 ];
 
-const Galleria = () => {
+const Gallery = () => {
   const [lightboxIndex, setLightboxIndex] = useState(-1);
 
   return (
@@ -73,4 +73,4 @@ const Galleria = () => {
   );
 };
 
-export default Galleria;
+export default Gallery;

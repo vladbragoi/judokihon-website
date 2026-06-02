@@ -16,7 +16,7 @@ const ScrollSection = ({ children, className = '', delay = 0 }) => {
   );
 };
 
-const Contatti = () => {
+const Contact = () => {
   return (
     <div className="page-container">
       <section className="page-header page-header--dark">
@@ -101,4 +101,4 @@ const Contatti = () => {
   );
 };
 
-export default Contatti;
+export default Contact;

@@ -3,11 +3,11 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import CookieBanner from './components/CookieBanner';
 import Home from './pages/Home';
-import IlDojo from './pages/IlDojo';
-import OrariCorsi from './pages/OrariCorsi';
-import Galleria from './pages/Galleria';
-import Contatti from './pages/Contatti';
-import CintureNere from './pages/CintureNere';
+import Dojo from './pages/Dojo';
+import Schedule from './pages/Schedule';
+import Gallery from './pages/Gallery';
+import Contact from './pages/Contact';
+import BlackBelts from './pages/BlackBelts';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 
 function App() {
@@ -18,11 +18,11 @@ function App() {
         <main className="main-content">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/il-dojo" element={<IlDojo />} />
-            <Route path="/orari-corsi" element={<OrariCorsi />} />
-            <Route path="/galleria" element={<Galleria />} />
-            <Route path="/cinture-nere" element={<CintureNere />} />
-            <Route path="/contatti" element={<Contatti />} />
+            <Route path="/il-dojo" element={<Dojo />} />
+            <Route path="/orari-corsi" element={<Schedule />} />
+            <Route path="/galleria" element={<Gallery />} />
+            <Route path="/cinture-nere" element={<BlackBelts />} />
+            <Route path="/contatti" element={<Contact />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           </Routes>
         </main>

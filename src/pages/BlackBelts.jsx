@@ -16,25 +16,25 @@ const ScrollSection = ({ children, className = '', delay = 0 }) => {
   );
 };
 
-const cintureNere = [
+const blackBelts = [
   // Maestri fondatori
-  { nome: 'Paolino Tarocco', dan: '6° Dan', anno: 2021, ruolo: 'Maestro — Fondatore' },
-  { nome: 'Paolino Tarocco', dan: '5° Dan', anno: 2007, ruolo: 'Maestro — Fondatore' },
+  { name: 'Paolino Tarocco', dan: '6° Dan', year: 2021, role: 'Maestro — Fondatore' },
+  { name: 'Paolino Tarocco', dan: '5° Dan', year: 2007, role: 'Maestro — Fondatore' },
   
-  { nome: 'Marco Bertolotto', dan: '5° Dan', anno: 2015, ruolo: 'Maestro — Fondatore' },
-  { nome: 'Marco Bertolotto', dan: '4° Dan', anno: 2008, ruolo: 'Maestro — Fondatore' },
+  { name: 'Marco Bertolotto', dan: '5° Dan', year: 2015, role: 'Maestro — Fondatore' },
+  { name: 'Marco Bertolotto', dan: '4° Dan', year: 2008, role: 'Maestro — Fondatore' },
   
   // Allievi (ordinati per grado decrescente)
-  { nome: 'Thomas Marangoni', dan: '3° Dan', anno: 2015, ruolo: 'Allenatore' },
+  { name: 'Thomas Marangoni', dan: '3° Dan', year: 2015, role: 'Allenatore' },
   
-  { nome: 'Vladislav Bragoi', dan: '2° Dan', anno: 2019, ruolo: 'Atleta' },
-  { nome: 'Giovanni Borgogna', dan: '2° Dan', anno: 2016, ruolo: 'Aspirante Allenatore' },
-  { nome: 'Federico Chiaramonte', dan: '2° Dan', anno: 2015, ruolo: 'Atleta' },
+  { name: 'Vladislav Bragoi', dan: '2° Dan', year: 2019, role: 'Atleta' },
+  { name: 'Giovanni Borgogna', dan: '2° Dan', year: 2016, role: 'Aspirante Allenatore' },
+  { name: 'Federico Chiaramonte', dan: '2° Dan', year: 2015, role: 'Atleta' },
   
-  { nome: 'Kevin De Paoli', dan: '1° Dan', anno: 2016, ruolo: 'Atleta' },
-  { nome: 'Vladislav Bragoi', dan: '1° Dan', anno: 2015, ruolo: 'Atleta' },
-  { nome: 'Giovanni Borgogna', dan: '1° Dan', anno: 2015, ruolo: 'Aspirante Allenatore' },
-  { nome: 'Federico Chiaramonte', dan: '1° Dan', anno: 2014, ruolo: 'Atleta' },
+  { name: 'Kevin De Paoli', dan: '1° Dan', year: 2016, role: 'Atleta' },
+  { name: 'Vladislav Bragoi', dan: '1° Dan', year: 2015, role: 'Atleta' },
+  { name: 'Giovanni Borgogna', dan: '1° Dan', year: 2015, role: 'Aspirante Allenatore' },
+  { name: 'Federico Chiaramonte', dan: '1° Dan', year: 2014, role: 'Atleta' },
 ];
 
 const allVideos = [
@@ -47,7 +47,7 @@ const allVideos = [
 
 const VIDEOS_PER_PAGE = 3;
 
-const CintureNere = () => {
+const BlackBelts = () => {
   const [videoPage, setVideoPage] = useState(0);
 
   const totalPages = Math.ceil(allVideos.length / VIDEOS_PER_PAGE);
@@ -76,8 +76,8 @@ const CintureNere = () => {
           </p>
         </ScrollSection>
 
-        <div className="cinture-grid">
-          {cintureNere.map((judoka, idx) => (
+        <div className="black-belts-grid">
+          {blackBelts.map((athlete, idx) => (
             <ScrollSection key={idx} delay={(idx % 4) * 80}>
               <div className="diploma-card">
                 {/* Angoli decorativi */}
@@ -95,11 +95,11 @@ const CintureNere = () => {
 
                 <div className="diploma-body">
                   <p className="diploma-label">Cintura Nera</p>
-                  <p className="diploma-dan">{judoka.dan}</p>
-                  <p className="diploma-nome">{judoka.nome}</p>
+                  <p className="diploma-dan">{athlete.dan}</p>
+                  <p className="diploma-nome">{athlete.name}</p>
                   <div className="diploma-divider"></div>
-                  <p className="diploma-ruolo">{judoka.ruolo}</p>
-                  <p className="diploma-anno">Decorrenza {judoka.anno}</p>
+                  <p className="diploma-ruolo">{athlete.role}</p>
+                  <p className="diploma-anno">Decorrenza {athlete.year}</p>
                 </div>
               </div>
             </ScrollSection>
@@ -162,4 +162,4 @@ const CintureNere = () => {
   );
 };
 
-export default CintureNere;
+export default BlackBelts;

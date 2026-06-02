@@ -20,7 +20,7 @@ const PrivacyPolicy = () => {
             La tua privacy è molto importante, quindi in questa pagina troverai tutti i dettagli sulle modalità con cui saranno trattati i tuoi dati personali.
             In particolare, ciò che trovi scritto di seguito rappresenta la Privacy Policy del sito <strong>www.judokihon.it</strong> redatta ai sensi del Codice in Materia di Protezione dei Dati Personali e del GDPR (Regolamento UE 2016/679).<br /><br />
             Questa informativa è valida solo per il sito judokihon.it e non per altri siti web eventualmente consultati dall’utente tramite link (anche esterni e in alcun modo collegabili a questo sito).
-            Per ulteriori chiarimenti riguardo i contenuti o sul trattamento dei dati personali all’interno di questo sito web, non esitare a contattarci tramite la pagina “Contatti”.
+            Per ulteriori chiarimenti riguardo i contenuti o sul trattamento dei dati personali all’interno di questo sito web, non esitare a contattarci tramite la pagina “Contact”.
           </p>
 
           <h2 className="section-title text-left brush-stroke-heading" style={{ marginTop: '3rem' }}>Titolare del Trattamento</h2>

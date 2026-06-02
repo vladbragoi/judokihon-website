@@ -17,20 +17,20 @@ const ScrollSection = ({ children, className = '', delay = 0 }) => {
   );
 };
 
-const maestriImages = [
+const instructorsImages = [
   { src: `${import.meta.env.BASE_URL}images/paolino.png`, alt: 'Paolino Tarocco' },
   { src: `${import.meta.env.BASE_URL}images/marco.png`, alt: 'Marco Bertolotto' },
   { src: `${import.meta.env.BASE_URL}images/giovanni e thomas.png`, alt: 'Giovanni Borgogna e Thomas Marangoni' },
 ];
 
-const palestraImages = [
+const gymImages = [
   { src: `${import.meta.env.BASE_URL}fotogalleria/images/entrata.jpg`, alt: 'Entrata Dojo' },
   { src: `${import.meta.env.BASE_URL}images/tatami(HDR).jpg`, alt: 'Il Tatami' },
   { src: `${import.meta.env.BASE_URL}images/manutenzione.png`, alt: 'Manutenzione' },
   { src: `${import.meta.env.BASE_URL}images/tatami.png`, alt: 'Tatami' },
 ];
 
-const IlDojo = () => {
+const Dojo = () => {
   const [lightbox, setLightbox] = useState(null); // { images, index }
 
   const openLightbox = (images, index) => setLightbox({ images, index });
@@ -52,13 +52,13 @@ const IlDojo = () => {
           <h2 className="section-title brush-stroke-heading">I Nostri Maestri</h2>
         </ScrollSection>
 
-        <div className="maestri-grid">
+        <div className="instructors-grid">
           <ScrollSection delay={0}>
-            <div className="maestro-card" onClick={() => openLightbox(maestriImages, 0)} style={{cursor: 'zoom-in'}}>
-              <div className="maestro-img-wrapper">
-                <img src={`${import.meta.env.BASE_URL}images/paolino.png`} alt="Paolino Tarocco" className="maestro-img" />
+            <div className="instructor-card" onClick={() => openLightbox(instructorsImages, 0)} style={{cursor: 'zoom-in'}}>
+              <div className="instructor-img-wrapper">
+                <img src={`${import.meta.env.BASE_URL}images/paolino.png`} alt="Paolino Tarocco" className="instructor-img" />
               </div>
-              <div className="maestro-info">
+              <div className="instructor-info">
                 <h3>Paolino Tarocco</h3>
                 <p className="maestro-role">Maestro 5° Dan JUDO</p>
               </div>
@@ -66,11 +66,11 @@ const IlDojo = () => {
           </ScrollSection>
 
           <ScrollSection delay={150}>
-            <div className="maestro-card" onClick={() => openLightbox(maestriImages, 1)} style={{cursor: 'zoom-in'}}>
-              <div className="maestro-img-wrapper">
-                <img src={`${import.meta.env.BASE_URL}images/marco.png`} alt="Marco Bertolotto" className="maestro-img" />
+            <div className="instructor-card" onClick={() => openLightbox(instructorsImages, 1)} style={{cursor: 'zoom-in'}}>
+              <div className="instructor-img-wrapper">
+                <img src={`${import.meta.env.BASE_URL}images/marco.png`} alt="Marco Bertolotto" className="instructor-img" />
               </div>
-              <div className="maestro-info">
+              <div className="instructor-info">
                 <h3>Marco Bertolotto</h3>
                 <p className="maestro-role">Maestro 5° Dan JUDO</p>
               </div>
@@ -78,11 +78,11 @@ const IlDojo = () => {
           </ScrollSection>
 
           <ScrollSection delay={300}>
-            <div className="maestro-card" onClick={() => openLightbox(maestriImages, 2)} style={{cursor: 'zoom-in'}}>
-              <div className="maestro-img-wrapper">
-                <img src={`${import.meta.env.BASE_URL}images/giovanni e thomas.png`} alt="Giovanni Borgogna e Thomas Marangoni" className="maestro-img" />
+            <div className="instructor-card" onClick={() => openLightbox(instructorsImages, 2)} style={{cursor: 'zoom-in'}}>
+              <div className="instructor-img-wrapper">
+                <img src={`${import.meta.env.BASE_URL}images/giovanni e thomas.png`} alt="Giovanni Borgogna e Thomas Marangoni" className="instructor-img" />
               </div>
-              <div className="maestro-info">
+              <div className="instructor-info">
                 <h3>Thomas e Giovanni</h3>
                 <p className="maestro-role">Allenatore e Aspirante Allenatore</p>
               </div>
@@ -113,8 +113,8 @@ const IlDojo = () => {
         <ScrollSection>
           <h2 className="section-title brush-stroke-heading">La Nostra Palestra</h2>
           <div className="images-grid">
-            {palestraImages.map((img, idx) => (
-              <div key={idx} className="grid-img-wrapper" onClick={() => openLightbox(palestraImages, idx)} style={{cursor: 'zoom-in'}}>
+            {gymImages.map((img, idx) => (
+              <div key={idx} className="grid-img-wrapper" onClick={() => openLightbox(gymImages, idx)} style={{cursor: 'zoom-in'}}>
                 <img src={img.src} alt={img.alt} loading="lazy" />
               </div>
             ))}
@@ -133,4 +133,4 @@ const IlDojo = () => {
   );
 };
 
-export default IlDojo;
+export default Dojo;
