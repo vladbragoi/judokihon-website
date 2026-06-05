@@ -157,7 +157,6 @@ const Schedule = () => {
                   </div>
                   <div>
                     <h3>Adulti</h3>
-                    <span className="badge">Dai 12 anni in su</span>
                   </div>
                 </div>
                 <div className="orari-details">
