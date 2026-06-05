@@ -64,7 +64,7 @@ const Dojo = () => {
               </div>
               <div className="instructor-info">
                 <h3>Paolino Tarocco</h3>
-                <p className="maestro-role">Maestro 5° Dan JUDO</p>
+                <p className="maestro-role">Maestro 6° Dan JUDO</p>
               </div>
             </div>
           </ScrollSection>

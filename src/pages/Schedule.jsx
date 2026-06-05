@@ -17,26 +17,35 @@ const ScrollSection = ({ children, className = '', delay = 0 }) => {
   );
 };
 
-/** Calcola il primo lunedì di un dato mese/anno */
-function getFirstMonday(year, month) {
-  const d = new Date(year, month, 1);
-  const day = d.getDay(); // 0=dom, 1=lun, ...
-  const offset = day === 0 ? 1 : day === 1 ? 0 : 8 - day;
-  d.setDate(1 + offset);
-  return d;
-}
-
-/** Primo lunedì di settembre */
+/** Giorno di allenamento (lun/mer/ven) più vicino al 1° settembre */
 function getAdultiStartDate(year) {
-  return getFirstMonday(year, 8); // mese 8 = settembre
+  const target = new Date(year, 8, 1); // 1 settembre
+  let closestDate = null;
+  let minDiff = Infinity;
+
+  for (let offset = -3; offset <= 3; offset++) {
+    const d = new Date(year, 8, 1 + offset);
+    const day = d.getDay();
+    // 1=lun, 3=mer, 5=ven
+    if (day === 1 || day === 3 || day === 5) {
+      const diff = Math.abs(offset);
+      // A parità di distanza, preferisci la data successiva (o uguale) al 1° sett
+      if (diff < minDiff || (diff === minDiff && offset > 0)) {
+        minDiff = diff;
+        closestDate = new Date(d);
+      }
+    }
+  }
+  return closestDate;
 }
 
-/** Primo lunedì dopo il 15 settembre */
+/** L'ultimo lunedì di settembre */
 function getBambiniStartDate(year) {
-  const d = new Date(year, 8, 16); // 16 settembre
+  const d = new Date(year, 8, 30); // 30 settembre
   const day = d.getDay();
-  const offset = day === 0 ? 1 : day === 1 ? 0 : 8 - day;
-  d.setDate(16 + offset);
+  // 0=dom, 1=lun, ... se domenica tolgo 6 gg per arrivare a lunedì, se martedì tolgo 1 gg
+  const offset = day === 0 ? 6 : day - 1;
+  d.setDate(30 - offset);
   return d;
 }
 
@@ -100,8 +109,33 @@ const Schedule = () => {
                     <UsersIcon size={24} />
                   </div>
                   <div>
-                    <h3>Bambini e Ragazzi</h3>
-                    <span className="badge">Dai 6 agli 11 anni</span>
+                    <h3>Bambini</h3>
+                    <span className="badge">Dai 6 ai 9 anni</span>
+                  </div>
+                </div>
+                <div className="orari-details">
+                  <div className="orario-row">
+                    <Calendar size={16} />
+                    <strong>Lunedì e Mercoledì</strong>
+                    <span className="orario-time">17:15 — 18:15</span>
+                  </div>
+                </div>
+                <p className="note">
+                  Gli allenamenti del corso Bambini ripartono <strong>{bambiniDate}</strong>.
+                  <br />
+                  Si accettano le iscrizioni dei bambini dall'anno{' '}
+                  <strong>{annoMinIscrizione}</strong>.
+                </p>
+              </div>
+
+              <div className="course-card">
+                <div className="course-card-header">
+                  <div className="corso-icon">
+                    <UsersIcon size={24} />
+                  </div>
+                  <div>
+                    <h3>Ragazzi</h3>
+                    <span className="badge">Dai 10 ai 13 anni</span>
                   </div>
                 </div>
                 <div className="orari-details">
@@ -112,11 +146,7 @@ const Schedule = () => {
                   </div>
                 </div>
                 <p className="note">
-                  Gli allenamenti del corso Bambini e ragazzi ripartono{' '}
-                  <strong>{bambiniDate}</strong>.
-                  <br />
-                  Si accettano le iscrizioni dei bambini dall'anno{' '}
-                  <strong>{annoMinIscrizione}</strong>.
+                  Gli allenamenti del corso Ragazzi ripartono <strong>{bambiniDate}</strong>.
                 </p>
               </div>
 
