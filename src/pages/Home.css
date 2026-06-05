@@ -336,50 +336,6 @@
   justify-content: center;
   flex-wrap: wrap;
 }
-
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.9rem 2rem;
-  background: var(--accent-color, #ba1826);
-  color: #fff;
-  font-family: var(--font-sans);
-  font-weight: 600;
-  font-size: 0.95rem;
-  border-radius: 6px;
-  border: 2px solid var(--accent-color, #ba1826);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  letter-spacing: 0.3px;
-}
-
-.btn-primary:hover {
-  background: var(--accent-hover, #9b1420);
-  border-color: var(--accent-hover, #9b1420);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(186, 24, 38, 0.3);
-}
-
-.btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.9rem 2rem;
-  background: transparent;
-  color: #fff;
-  font-family: var(--font-sans);
-  font-weight: 600;
-  font-size: 0.95rem;
-  border-radius: 6px;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  letter-spacing: 0.3px;
-}
-
-.btn-secondary:hover {
-  border-color: #fff;
-  background: rgba(255, 255, 255, 0.08);
-  transform: translateY(-2px);
-}
-
 /* ===========================
    WELCOME / ABOUT SECTION
    =========================== */

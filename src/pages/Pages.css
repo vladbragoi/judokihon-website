@@ -239,6 +239,7 @@
   .corsi-layout {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
+    align-items: start;
   }
 }
 
@@ -327,10 +328,6 @@
   font-size: 0.9rem;
   color: var(--text-secondary);
   line-height: 1.7;
-}
-
-.iscrizione-section {
-  margin-top: 3rem;
 }
 
 .document-links {

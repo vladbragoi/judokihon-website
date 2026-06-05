@@ -1,19 +1,22 @@
 {
   "blackBelts": [
-    { "name": "Paolino Tarocco", "dan": "6° Dan", "year": 2020, "role": "Maestro — Fondatore" },
-    { "name": "Marco Bertolotto", "dan": "5° Dan", "year": 2015, "role": "Maestro — Fondatore" },
-    { "name": "Thomas Marangoni", "dan": "3° Dan", "year": 2015, "role": "Allenatore" },
+    { "name": "Massimiliano Trevenzuoli", "dan": "1° Dan", "year": 2025, "role": "Atleta" },
+    { "name": "Armando De Berti", "dan": "1° Dan", "year": 2022, "role": "Atleta" },
     { "name": "Elena Cavattoni", "dan": "1° Dan", "year": 2022, "role": "Atleta" },
+    { "name": "Werner Masolini", "dan": "2° Dan", "year": 2021, "role": "Atleta" },
+    { "name": "Paolino Tarocco", "dan": "6° Dan", "year": 2020, "role": "Maestro — Fondatore" },
     { "name": "Federico Chiaramonte", "dan": "3° Dan", "year": 2019, "role": "Atleta" },
     { "name": "Vladislav Bragoi", "dan": "2° Dan", "year": 2018, "role": "Atleta" },
     { "name": "Lorenzo Bersani", "dan": "1° Dan", "year": 2017, "role": "Atleta" },
     { "name": "Claudio Zorzella", "dan": "1° Dan", "year": 2017, "role": "Atleta" },
     { "name": "Giovanni Borgogna", "dan": "2° Dan", "year": 2016, "role": "Aspirante Allenatore" },
     { "name": "Kevin De Paoli", "dan": "1° Dan", "year": 2016, "role": "Atleta" },
-    { "name": "Massimo Scabello", "dan": "1° Dan", "year": 2006, "role": "Atleta" },
+    { "name": "Thomas Marangoni", "dan": "3° Dan", "year": 2015, "role": "Allenatore" },
+    { "name": "Marco Bertolotto", "dan": "5° Dan", "year": 2015, "role": "Maestro — Fondatore" },
     { "name": "Elena Fiorini", "dan": "1° Dan", "year": 2012, "role": "Atleta" },
     { "name": "Federico Fracasso", "dan": "1° Dan", "year": 2012, "role": "Atleta" },
-    { "name": "Nicole Caiazza", "dan": "1° Dan", "year": 2011, "role": "Atleta" }
+    { "name": "Nicole Caiazza", "dan": "1° Dan", "year": 2011, "role": "Atleta" },
+    { "name": "Massimo Scabello", "dan": "1° Dan", "year": 2006, "role": "Atleta" }
   ],
   "allVideos": [
     { "id": "R9PIRonRuUA", "title": "Thomas: 3° Dan - 2015" },
