@@ -13,7 +13,7 @@
   background-color: #000;
   /* background-image is set dynamically inline */
   background-size: cover;
-  background-position: center;
+  background-position: calc(50% + 25px) center;
   background-attachment: fixed;
   color: #fff;
   text-align: center;
