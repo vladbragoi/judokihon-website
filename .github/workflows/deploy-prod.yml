@@ -23,8 +23,11 @@ jobs:
       - name: Installa dipendenze
         run: npm ci
 
-      - name: Installa LibreOffice per generazione PDF
-        run: sudo apt-get update && sudo apt-get install -y libreoffice --no-install-recommends
+      - name: Installa LibreOffice e font MS per generazione PDF
+        run: |
+          sudo apt-get update
+          echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
+          sudo apt-get install -y libreoffice ttf-mscorefonts-installer fonts-crosextra-carlito fonts-crosextra-caladea --no-install-recommends
 
       - name: Compila il sito
         run: npm run build
