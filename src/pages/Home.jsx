@@ -33,7 +33,7 @@ const Home = () => {
       {/* Hero Section */}
       <section
         className="hero"
-        style={{ backgroundImage: `url('${import.meta.env.BASE_URL}images/telonenuovo.png')` }}
+        style={{ backgroundImage: `url('${import.meta.env.BASE_URL}images/dojo.jpg')` }}
       >
         <div className="hero-overlay"></div>
         <div className="hero-pattern"></div>

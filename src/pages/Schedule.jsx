@@ -183,7 +183,7 @@ const Schedule = () => {
 
             <div className="document-links">
               <a
-                href="/avviso corsi stagione 2024-2025.pdf"
+                href="/Volantino_stagione.pdf"
                 target="_blank"
                 rel="noreferrer"
                 className="doc-link"
@@ -195,7 +195,7 @@ const Schedule = () => {
                 </div>
               </a>
               <a
-                href="/Domanda di ammissione a socio 2024-2025.pdf"
+                href="/Domanda_di_ammissione.pdf"
                 target="_blank"
                 rel="noreferrer"
                 className="doc-link"
