@@ -5,6 +5,9 @@ on:
     branches:
       - master
       - main
+  schedule:
+    - cron: '0 2 1 6 *'
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
