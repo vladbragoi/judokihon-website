@@ -1,4 +1,4 @@
-name: Deploy Prod (master)
+name: Deploy Prod (main)
 
 on:
   push:
@@ -11,8 +11,10 @@ on:
 
 jobs:
   build-and-deploy:
-    name: Build & Deploy Prod via FTP
+    name: Build & Deploy Prod via GitHub Pages
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout del codice
