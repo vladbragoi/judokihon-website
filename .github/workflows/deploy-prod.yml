@@ -37,12 +37,14 @@ jobs:
         env:
           VITE_BASE_URL: /
 
-      - name: Pubblica su Aruba via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: Aggiungi fallback 404 per SPA (React Router)
+        run: cp ./dist/index.html ./dist/404.html
+
+      - name: Pubblica su GitHub Pages (Repo Produzione)
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist/
-          server-dir: ./judokihon.it/
-          protocol: ftp
+          personal_token: ${{ secrets.PROD_DEPLOY_TOKEN }}
+          external_repository: vladbragoi/judokihon-production
+          publish_branch: gh-pages
+          publish_dir: ./dist
+          cname: www.judokihon.it
