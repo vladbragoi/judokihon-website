@@ -43,7 +43,18 @@ const BlackBelts = () => {
         <div className="page-header-content">
           <span className="page-header-kanji">黒帯</span>
           <h1>Cinture Nere</h1>
-          <p>I judoka che hanno raggiunto il traguardo della cintura nera nel nostro Dojo</p>
+          <div style={{ maxWidth: '850px', margin: '0 auto', textAlign: 'center', color: 'rgba(255,255,255,0.9)' }}>
+            <p style={{ marginBottom: '1.2rem', fontSize: '1.15rem', lineHeight: '1.6' }}>
+              La cintura nera rappresenta un traguardo fondamentale nel percorso di ogni judoka, il culmine di anni di dedizione e disciplina sul tatami. Per il suo conseguimento e per l'acquisizione dei Dan successivi, il{' '}
+              <a href="https://www.fijlkam.it/judo/attivita-didattica/graduazione/graduazione-regionale.html" target="_blank" rel="noreferrer" style={{ color: '#fff', textDecoration: 'underline', fontWeight: '500' }}>
+                programma d'esame ufficiale FIJLKAM
+              </a>
+              {' '}prevede come elemento obbligatorio lo studio dei <strong>Kata</strong>.
+            </p>
+            <p style={{ margin: '0', fontSize: '1.15rem', lineHeight: '1.6' }}>
+              Letteralmente traducibili come "forme", i Kata non sono semplici coreografie ma sequenze preordinate che tramandano la grammatica, la tecnica e i princìpi originari del combattimento. In questa pagina celebriamo l'Albo d'Onore di chi ha raggiunto questo ambito traguardo nel nostro Dojo.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -109,7 +120,7 @@ const BlackBelts = () => {
             style={{ color: 'rgba(255,255,255,0.7)', marginBottom: '3rem' }}
           >
             I momenti indimenticabili in cui i nostri atleti hanno sostenuto l'esame per la cintura
-            nera.
+            nera, dimostrando tecnica e dedizione.
           </p>
         </ScrollSection>
 

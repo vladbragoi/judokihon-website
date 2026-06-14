@@ -102,12 +102,28 @@
 
 .brush-stroke-heading::after {
   content: '';
-  display: block;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 60px;
-  height: 3px;
-  background: var(--accent-color, #ba1826);
-  margin: 0.8rem auto 0;
-  border-radius: 2px;
+  height: 4px;
+  background-color: var(--accent-color, #ba1826);
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+}
+
+.parchment-box {
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.9;
+  padding: 2rem;
+  border-left: 3px solid var(--accent-color, #ba1826);
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  text-align: left;
+  border-radius: 0 8px 8px 0;
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .text-left .brush-stroke-heading::after,

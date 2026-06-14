@@ -206,7 +206,7 @@ const Schedule = () => {
                   <span className="doc-subtitle">Scarica e compila il modulo</span>
                 </div>
               </a>
-              <a href="/programma judo kihon per verifiche.xlsx" className="doc-link">
+              <a href="/programma_kyu.xlsx" className="doc-link">
                 <Download size={22} />
                 <div>
                   <span className="doc-title">Programma per passaggio Kyu</span>

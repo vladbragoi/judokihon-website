@@ -115,22 +115,20 @@ const Home = () => {
           </ScrollSection>
 
           <ScrollSection delay={200}>
-            <a
-              href="http://it.wikipedia.org/wiki/Kata_del_judo"
-              target="_blank"
-              rel="noreferrer"
+            <Link
+              to="/cinture-nere"
               className="quick-nav-card"
             >
               <div className="card-accent"></div>
               <div className="card-icon">
                 <BookOpen size={28} />
               </div>
-              <h3>I Kata</h3>
-              <p>Le forme del Judo, radici profonde per comprendere le tecniche.</p>
+              <h3>I Dan</h3>
+              <p>L'Albo d'Onore delle nostre cinture nere e il programma d'esame per conseguirli.</p>
               <span className="card-arrow">
                 <ArrowRight size={16} />
               </span>
-            </a>
+            </Link>
           </ScrollSection>
 
           <ScrollSection delay={300}>
