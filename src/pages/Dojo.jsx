@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import ImageLightbox from '../components/ImageLightbox';
+import { Helmet } from 'react-helmet-async';
+import data from '../data/dojo.json';
 import './Pages.css';
 
 const ScrollSection = ({ children, className = '', delay = 0 }) => {
@@ -17,19 +19,6 @@ const ScrollSection = ({ children, className = '', delay = 0 }) => {
   );
 };
 
-const instructorsImages = [
-  { src: `${import.meta.env.BASE_URL}images/paolino.png`, alt: 'Paolino Tarocco' },
-  { src: `${import.meta.env.BASE_URL}images/marco.png`, alt: 'Marco Bertolotto' },
-  { src: `${import.meta.env.BASE_URL}images/giovanni e thomas.png`, alt: 'Giovanni Borgogna e Thomas Marangoni' },
-];
-
-const gymImages = [
-  { src: `${import.meta.env.BASE_URL}fotogalleria/images/entrata.jpg`, alt: 'Entrata Dojo' },
-  { src: `${import.meta.env.BASE_URL}images/tatami(HDR).jpg`, alt: 'Il Tatami' },
-  { src: `${import.meta.env.BASE_URL}images/manutenzione.png`, alt: 'Manutenzione' },
-  { src: `${import.meta.env.BASE_URL}images/tatami.png`, alt: 'Tatami' },
-];
-
 const Dojo = () => {
   const [lightbox, setLightbox] = useState(null); // { images, index }
 
@@ -38,6 +27,13 @@ const Dojo = () => {
 
   return (
     <div className="page-container">
+      <Helmet>
+        <title>Il Dojo - Judo Kihon Bovolone</title>
+        <meta
+          name="description"
+          content="Scopri la storia dell'A.S.D. Judo Kihon Bovolone, i nostri maestri e le foto della nostra palestra e del tatami."
+        />
+      </Helmet>
       <section className="page-header page-header--dark">
         <div className="page-header-pattern"></div>
         <div className="page-header-content">
@@ -54,21 +50,37 @@ const Dojo = () => {
 
         <div className="instructors-grid">
           <ScrollSection delay={0}>
-            <div className="instructor-card" onClick={() => openLightbox(instructorsImages, 0)} style={{cursor: 'zoom-in'}}>
+            <div
+              className="instructor-card"
+              onClick={() => openLightbox(data.instructorsImages, 0)}
+              style={{ cursor: 'zoom-in' }}
+            >
               <div className="instructor-img-wrapper">
-                <img src={`${import.meta.env.BASE_URL}images/paolino.png`} alt="Paolino Tarocco" className="instructor-img" />
+                <img
+                  src={`${import.meta.env.BASE_URL}${data.instructorsImages[0].src}`}
+                  alt={data.instructorsImages[0].alt}
+                  className="instructor-img"
+                />
               </div>
               <div className="instructor-info">
                 <h3>Paolino Tarocco</h3>
-                <p className="maestro-role">Maestro 5° Dan JUDO</p>
+                <p className="maestro-role">Maestro 6° Dan JUDO</p>
               </div>
             </div>
           </ScrollSection>
 
           <ScrollSection delay={150}>
-            <div className="instructor-card" onClick={() => openLightbox(instructorsImages, 1)} style={{cursor: 'zoom-in'}}>
+            <div
+              className="instructor-card"
+              onClick={() => openLightbox(data.instructorsImages, 1)}
+              style={{ cursor: 'zoom-in' }}
+            >
               <div className="instructor-img-wrapper">
-                <img src={`${import.meta.env.BASE_URL}images/marco.png`} alt="Marco Bertolotto" className="instructor-img" />
+                <img
+                  src={`${import.meta.env.BASE_URL}${data.instructorsImages[1].src}`}
+                  alt={data.instructorsImages[1].alt}
+                  className="instructor-img"
+                />
               </div>
               <div className="instructor-info">
                 <h3>Marco Bertolotto</h3>
@@ -78,9 +90,17 @@ const Dojo = () => {
           </ScrollSection>
 
           <ScrollSection delay={300}>
-            <div className="instructor-card" onClick={() => openLightbox(instructorsImages, 2)} style={{cursor: 'zoom-in'}}>
+            <div
+              className="instructor-card"
+              onClick={() => openLightbox(data.instructorsImages, 2)}
+              style={{ cursor: 'zoom-in' }}
+            >
               <div className="instructor-img-wrapper">
-                <img src={`${import.meta.env.BASE_URL}images/giovanni e thomas.png`} alt="Giovanni Borgogna e Thomas Marangoni" className="instructor-img" />
+                <img
+                  src={`${import.meta.env.BASE_URL}${data.instructorsImages[2].src}`}
+                  alt={data.instructorsImages[2].alt}
+                  className="instructor-img"
+                />
               </div>
               <div className="instructor-info">
                 <h3>Thomas e Giovanni</h3>
@@ -93,15 +113,38 @@ const Dojo = () => {
 
       <section className="section-dark section">
         <ScrollSection className="storia-content">
-          <h2 className="section-title brush-stroke-heading" style={{color: '#fff'}}>La Nostra Storia</h2>
+          <h2 className="section-title brush-stroke-heading" style={{ color: '#fff' }}>
+            La Nostra Storia
+          </h2>
           <div className="text-content text-content--light">
-            <p>La passione per il judo dei nostri maestri, Paolino Tarocco e Marco Bertolotto, inizia molti anni fa proprio a Bovolone.</p>
-            <p>Paolino si accosta alla nostra arte marziale nel settembre del 1982; Marco inizia qualche anno più tardi, nel 1989. Ma il Dojo è lo stesso: si tratta della "mitica" palestra del maestro Sergio Bazzani, che da anni ormai, in Via Dante Alighieri, insegna questo sport a moltissimi ragazzi e ragazze.</p>
-            <p>E' nella sua palestra che Paolino e Marco si preparano per sostenere l'esame per la cintura nera, conseguita da Paolino nel giugno 1989 e da Marco nel giugno 1996.</p>
-            <p>Con il passare del tempo, e la costante collaborazione con il loro primo mentore, inizia la passione per la scuola, soprattutto nei confronti dei più piccoli. Paolino ottiene nel giugno 1998 la qualifica di allenatore che lo abilita all'insegnamento, qualifica che anche Marco consegue nel 2000. E matura così nei due amici il desiderio di aprire una propria palestra.</p>
-            
+            <p>
+              La passione per il judo dei nostri maestri, Paolino Tarocco e Marco Bertolotto, inizia
+              molti anni fa proprio a Bovolone.
+            </p>
+            <p>
+              Paolino si accosta alla nostra arte marziale nel settembre del 1982; Marco inizia
+              qualche anno più tardi, nel 1989. Ma il Dojo è lo stesso: si tratta della "mitica"
+              palestra del maestro Sergio Bazzani, che da anni ormai, in Via Dante Alighieri,
+              insegna questo sport a moltissimi ragazzi e ragazze.
+            </p>
+            <p>
+              E' nella sua palestra che Paolino e Marco si preparano per sostenere l'esame per la
+              cintura nera, conseguita da Paolino nel giugno 1989 e da Marco nel giugno 1996.
+            </p>
+            <p>
+              Con il passare del tempo, e la costante collaborazione con il loro primo mentore,
+              inizia la passione per la scuola, soprattutto nei confronti dei più piccoli. Paolino
+              ottiene nel giugno 1998 la qualifica di allenatore che lo abilita all'insegnamento,
+              qualifica che anche Marco consegue nel 2000. E matura così nei due amici il desiderio
+              di aprire una propria palestra.
+            </p>
+
             <div style={{ marginTop: '3rem', textAlign: 'center' }}>
-              <Link to="/cinture-nere" className="btn-primary" style={{ display: 'inline-flex', padding: '1rem 2rem', fontSize: '1.1rem' }}>
+              <Link
+                to="/cinture-nere"
+                className="btn-primary"
+                style={{ display: 'inline-flex', padding: '1rem 2rem', fontSize: '1.1rem' }}
+              >
                 Albo d'Onore delle Cinture Nere
               </Link>
             </div>
@@ -113,9 +156,14 @@ const Dojo = () => {
         <ScrollSection>
           <h2 className="section-title brush-stroke-heading">La Nostra Palestra</h2>
           <div className="images-grid">
-            {gymImages.map((img, idx) => (
-              <div key={idx} className="grid-img-wrapper" onClick={() => openLightbox(gymImages, idx)} style={{cursor: 'zoom-in'}}>
-                <img src={img.src} alt={img.alt} loading="lazy" />
+            {data.gymImages.map((img, idx) => (
+              <div
+                key={idx}
+                className="grid-img-wrapper"
+                onClick={() => openLightbox(data.gymImages, idx)}
+                style={{ cursor: 'zoom-in' }}
+              >
+                <img src={`${import.meta.env.BASE_URL}${img.src}`} alt={img.alt} loading="lazy" />
               </div>
             ))}
           </div>

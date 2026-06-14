@@ -5,15 +5,15 @@
 
 :root {
   /* Palette */
-  --bg-primary: #f8f6f3;      /* Warm rice paper */
+  --bg-primary: #f8f6f3; /* Warm rice paper */
   --bg-secondary: #ffffff;
-  --bg-dark: #1a1a1a;          /* Sumi ink black */
+  --bg-dark: #1a1a1a; /* Sumi ink black */
   --text-primary: #1a1a1a;
   --text-secondary: #5a5a5a;
   --text-light: rgba(255, 255, 255, 0.85);
-  --accent-color: #ba1826;     /* Crimson / Hinomaru */
+  --accent-color: #ba1826; /* Crimson / Hinomaru */
   --accent-hover: #9b1420;
-  --gold-accent: #d4af37;      /* Subtle Gold */
+  --gold-accent: #d4af37; /* Subtle Gold */
   --border-color: rgba(0, 0, 0, 0.08);
 
   /* Typography */
@@ -57,7 +57,12 @@ body {
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-serif);
   font-weight: 600;
   color: var(--text-primary);
@@ -117,8 +122,14 @@ img {
    ANIMATIONS
    =========================== */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-fade-in {
@@ -139,4 +150,54 @@ img {
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.4);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+}
+
+/* ===========================
+   BUTTONS
+   =========================== */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.9rem 2rem;
+  background: var(--accent-color, #ba1826);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  border: 2px solid var(--accent-color, #ba1826);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  letter-spacing: 0.3px;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover, #9b1420);
+  border-color: var(--accent-hover, #9b1420);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(186, 24, 38, 0.3);
+  color: #fff;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.9rem 2rem;
+  background: transparent;
+  color: #fff;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  letter-spacing: 0.3px;
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #fff;
+  transform: translateY(-2px);
+  color: #fff;
 }

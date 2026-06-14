@@ -11,13 +11,13 @@ Il sito è sviluppato in **React** (utilizzando Vite) e si avvale di una pipelin
 
 Il progetto usa una struttura multi-ambiente per garantire che le modifiche vengano prima testate e poi rilasciate in sicurezza:
 
-- **Ambiente di Test** (`judokihon.it/test`):
+- **Ambiente di Test** (`test.judokihon.it`):
   - È agganciato al branch **`env/test`**.
-  - Ogni volta che del codice viene unito (merged) su questo branch, la GitHub Action `Deploy Test` compila il sito e lo carica via FTP sulla cartella `/test/`.
+  - Ogni volta che del codice viene unito (merged) su questo branch, la GitHub Action compila il sito e lo pubblica automaticamente tramite GitHub Pages sul sottodominio `test.judokihon.it`.
   
 - **Ambiente di Produzione** (`judokihon.it`):
   - È agganciato al branch **`master`** (o `main`).
-  - Ogni volta che del codice viene unito (merged) su questo branch, la GitHub Action `Deploy Prod` compila il sito e lo carica via FTP sulla radice (root) del sito.
+  - Ogni volta che del codice viene unito (merged) su questo branch, la GitHub Action compila il sito e lo carica via FTP sulla radice del dominio principale.
 
 ---
 
@@ -34,35 +34,34 @@ L'aggiornamento diretto dei branch protetti è disabilitato. Qualsiasi modifica 
 6. Una volta approvata, esegui il Merge su `env/test`. Attendi qualche minuto per visualizzare i risultati su `judokihon.it/test`.
 7. Se tutto è corretto, apri una nuova Pull Request da `env/test` verso `master` e richiedi nuovamente l'approvazione a @vladbragoi per la messa in produzione.
 
-> **Nota per gli Amministratori di GitHub:** Assicuratevi che nelle *Branch Protection Rules* del repository siano attivate le restrizioni che impongono almeno 1 Approvazione da parte dei Code Owners per i branch `env/test` e `master/main`.
-
 ---
 
 ## 📝 Come Modificare i Contenuti
 
+I dati del sito sono estratti in comodi file di configurazione in formato JSON all'interno della cartella `src/data/`.
+
 ### 🥋 Aggiungere una Nuova Cintura Nera
-1. Apri il file `src/pages/CintureNere.jsx`.
-2. Trova l'array `cintureNere` all'inizio del file.
-3. Aggiungi un nuovo oggetto rispettando questo formato:
-   ```javascript
-   { nome: 'Nome Cognome', dan: '1° Dan', anno: 2024, ruolo: 'Atleta' }
+1. Apri il file `src/data/blackBelts.json`.
+2. Trova l'array `"blackBelts"`.
+3. Aggiungi un nuovo oggetto rispettando questo formato (mantenendo l'ordine decrescente di grado):
+   ```json
+   { "name": "Nome Cognome", "dan": "1° Dan", "year": 2024, "role": "Atleta" }
    ```
-   *I gradi superiori vanno aggiunti mantenendo l'ordinamento decrescente, tenendo lo storico per ogni individuo (una card per ogni Dan).*
 
 ### 📹 Aggiungere un Nuovo Video (Esami Dan)
-1. Apri il file `src/pages/CintureNere.jsx`.
-2. Trova l'array `allVideos`.
-3. Aggiungi un nuovo oggetto contenente l'ID del video di YouTube (la stringa dopo `v=`) e il titolo:
-   ```javascript
-   { id: 'CODICE_YOUTUBE', title: 'Nome: X° Dan - Anno' }
+1. Apri il file `src/data/blackBelts.json`.
+2. Trova l'array `"allVideos"`.
+3. Aggiungi l'ID del video di YouTube (la stringa dopo `v=`):
+   ```json
+   { "id": "CODICE_YOUTUBE", "title": "Nome: X° Dan - Anno" }
    ```
 
 ### 📸 Aggiungere una Nuova Foto alla Galleria
-1. Inserisci il file originale dell'immagine all'interno della cartella `public/images/` (oppure `public/fotogalleria/images/`).
-2. Apri il file `src/pages/Galleria.jsx`.
-3. Aggiungi la nuova foto all'array `images` usando questa sintassi (la macro `import.meta.env.BASE_URL` garantisce che il link non si rompa passando da Test a Produzione):
-   ```javascript
-   { src: `${import.meta.env.BASE_URL}images/NOME_FOTO.jpg`, alt: 'Descrizione della foto' }
+1. Inserisci il file originale dell'immagine all'interno della cartella `public/images/`.
+2. Apri il file `src/data/gallery.json`.
+3. Aggiungi la nuova foto all'array `"images"`:
+   ```json
+   { "src": "images/NOME_FOTO.jpg", "alt": "Descrizione della foto" }
    ```
 
 ---
@@ -79,9 +78,14 @@ Se desideri clonare il sito e lavorarci sul tuo computer:
   ```bash
   npm run dev
   ```
+- **Linter e Formattazione del Codice:**
+  ```bash
+  npm run format
+  npm run lint
+  ```
 - **Testa la build compilata in locale:**
   ```bash
-  VITE_BASE_URL=/test/ npm run build
+  npm run build
   npm run preview
   ```
 
