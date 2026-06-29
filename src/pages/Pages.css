@@ -73,6 +73,18 @@
 .section-dark {
   background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
   padding: 5rem 2rem;
+  border-radius: 40px;
+  margin: 4rem auto;
+  width: 92%;
+  max-width: 1400px;
+}
+
+@media (min-width: 768px) {
+  .section-dark {
+    margin: 5rem auto;
+    border-radius: 60px;
+    width: 95%;
+  }
 }
 
 .section-subtitle {
@@ -138,7 +150,8 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
-  margin-bottom: 4rem;
+  margin: 0 auto 1rem;
+  max-width: 1050px;
 }
 
 @media (min-width: 1024px) {
@@ -148,50 +161,103 @@
 }
 
 .instructor-card {
-  background: var(--bg-secondary, #fff);
-  border-radius: 12px;
-  overflow: hidden;
+  background: transparent;
+  border-radius: 0;
+  overflow: visible;
   text-align: center;
-  transition:
-    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.4s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  position: relative;
+  transition: transform 0.4s ease;
+  box-shadow: none;
 }
 
 .instructor-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
 
 .instructor-img-wrapper {
-  overflow: hidden;
+  position: relative;
+  width: 250px;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-top: 1rem;
+}
+
+.instructor-img-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border-top: 2px solid var(--accent-color, #ba1826);
+  border-left: 2px solid var(--accent-color, #ba1826);
+  background-color: transparent;
+  transition: all 0.5s ease;
+  z-index: 0;
+}
+
+.instructor-card:hover .instructor-img-wrapper::before {
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
 }
 
 .instructor-img {
   width: 100%;
-  height: 280px;
+  height: 250px;
   object-fit: cover;
   object-position: top;
-  transition: transform 0.5s ease;
+  border-radius: 2px;
+  filter: grayscale(10%) contrast(1.1);
+  position: relative;
+  z-index: 1;
+  transition: filter 0.4s ease;
 }
 
 .instructor-card:hover .instructor-img {
-  transform: scale(1.05);
+  filter: grayscale(0%) contrast(1);
+}
+
+.instructor-placeholder {
+  width: 100%;
+  height: 250px;
+  background-color: rgba(0,0,0,0.03);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  border: 1px dashed rgba(0,0,0,0.1);
+}
+
+.placeholder-icon {
+  font-size: 4rem;
+  opacity: 0.2;
 }
 
 .instructor-info {
-  padding: 1.5rem;
+  padding: 0 1rem;
 }
 
 .instructor-info h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.3rem;
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.4rem;
+  color: var(--text-primary);
 }
 
 .maestro-role {
-  color: var(--accent-color);
-  font-weight: 500;
-  font-size: 0.9rem;
+  color: var(--accent-color, #ba1826);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  margin: 0;
 }
 
 /* Storia */

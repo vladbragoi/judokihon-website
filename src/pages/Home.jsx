@@ -33,7 +33,7 @@ const Home = () => {
       {/* Hero Section */}
       <section
         className="hero"
-        style={{ backgroundImage: `url('${import.meta.env.BASE_URL}images/dojo.jpg')` }}
+        style={{ backgroundImage: `url('${import.meta.env.BASE_URL}images/dojo.webp')` }}
       >
         <div className="hero-overlay"></div>
         <div className="hero-pattern"></div>
@@ -190,17 +190,20 @@ const Home = () => {
                 Scopri la nostra storia <ArrowRight size={16} />
               </Link>
             </div>
-            <div
-              className="welcome-image-wrapper"
-              onClick={() => setLightboxImg(`${import.meta.env.BASE_URL}images/maestri.png`)}
-              style={{ cursor: 'zoom-in' }}
-            >
-              <img
-                src={`${import.meta.env.BASE_URL}images/maestri.png`}
-                alt="I maestri del Judo Kihon"
-                className="welcome-image"
-              />
-              <div className="welcome-image-frame"></div>
+            <div className="welcome-image-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <div
+                className="welcome-image-wrapper"
+                onClick={() => setLightboxImg(`${import.meta.env.BASE_URL}images/jigoro-kano.webp`)}
+                style={{ cursor: 'zoom-in', width: '100%' }}
+              >
+                <img
+                  src={`${import.meta.env.BASE_URL}images/jigoro-kano.webp`}
+                  alt="Jigoro Kano - Fondatore del Judo"
+                  className="welcome-image"
+                />
+                <div className="welcome-image-frame"></div>
+              </div>
+              <p className="welcome-caption">Jigoro Kano (1860 - 1938) – Il fondatore del Judo</p>
             </div>
           </div>
         </ScrollSection>
@@ -208,7 +211,7 @@ const Home = () => {
 
       {lightboxImg && (
         <ImageLightbox
-          images={[{ src: lightboxImg, alt: 'I maestri del Judo Kihon' }]}
+          images={[{ src: lightboxImg, alt: 'Jigoro Kano - Fondatore del Judo' }]}
           startIndex={0}
           onClose={() => setLightboxImg(null)}
         />

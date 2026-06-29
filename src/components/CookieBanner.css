@@ -40,10 +40,41 @@
   color: #d12c3b;
 }
 
+.cookie-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
 .cookie-btn {
   padding: 0.6rem 1.5rem;
   font-size: 0.9rem;
   white-space: nowrap;
+}
+
+.privacy-widget-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  border: 2px solid var(--accent-color);
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 9998;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.privacy-widget-btn:hover {
+  transform: scale(1.1);
+  background-color: #1a1a1a;
 }
 
 @media (min-width: 1024px) {

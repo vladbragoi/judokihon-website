@@ -1,8 +1,35 @@
 {
-  "instructorsImages": [
-    { "src": "images/paolino.png", "alt": "Paolino Tarocco" },
-    { "src": "images/marco.png", "alt": "Marco Bertolotto" },
-    { "src": "images/giovanni e thomas.png", "alt": "Giovanni Borgogna e Thomas Marangoni" }
+  "instructors": [
+    {
+      "name": "Paolino Tarocco",
+      "role": "Maestro 6° Dan",
+      "image": "images/paolino.webp"
+    },
+    {
+      "name": "Marco Bertolotto",
+      "role": "Maestro 5° Dan",
+      "image": "images/marco.webp"
+    },
+    {
+      "name": "Thomas Marangoni",
+      "role": "Allenatore",
+      "image": "images/thomas.webp"
+    },
+    {
+      "name": "Werner",
+      "role": "Allenatore",
+      "image": "images/werner.webp"
+    },
+    {
+      "name": "Federico",
+      "role": "Allenatore Base",
+      "image": null
+    },
+    {
+      "name": "Giovanni",
+      "role": "Allenatore Base",
+      "image": null
+    }
   ],
   "gymImages": [
     { "src": "gallery/images/entrata.jpg", "alt": "Entrata Dojo" },

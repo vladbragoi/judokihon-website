@@ -43,80 +43,12 @@ const Dojo = () => {
         </div>
       </section>
 
-      <section className="section">
-        <ScrollSection>
-          <h2 className="section-title brush-stroke-heading">I Nostri Maestri</h2>
-        </ScrollSection>
-
-        <div className="instructors-grid">
-          <ScrollSection delay={0}>
-            <div
-              className="instructor-card"
-              onClick={() => openLightbox(data.instructorsImages, 0)}
-              style={{ cursor: 'zoom-in' }}
-            >
-              <div className="instructor-img-wrapper">
-                <img
-                  src={`${import.meta.env.BASE_URL}${data.instructorsImages[0].src}`}
-                  alt={data.instructorsImages[0].alt}
-                  className="instructor-img"
-                />
-              </div>
-              <div className="instructor-info">
-                <h3>Paolino Tarocco</h3>
-                <p className="maestro-role">Maestro 6° Dan JUDO</p>
-              </div>
-            </div>
-          </ScrollSection>
-
-          <ScrollSection delay={150}>
-            <div
-              className="instructor-card"
-              onClick={() => openLightbox(data.instructorsImages, 1)}
-              style={{ cursor: 'zoom-in' }}
-            >
-              <div className="instructor-img-wrapper">
-                <img
-                  src={`${import.meta.env.BASE_URL}${data.instructorsImages[1].src}`}
-                  alt={data.instructorsImages[1].alt}
-                  className="instructor-img"
-                />
-              </div>
-              <div className="instructor-info">
-                <h3>Marco Bertolotto</h3>
-                <p className="maestro-role">Maestro 5° Dan JUDO</p>
-              </div>
-            </div>
-          </ScrollSection>
-
-          <ScrollSection delay={300}>
-            <div
-              className="instructor-card"
-              onClick={() => openLightbox(data.instructorsImages, 2)}
-              style={{ cursor: 'zoom-in' }}
-            >
-              <div className="instructor-img-wrapper">
-                <img
-                  src={`${import.meta.env.BASE_URL}${data.instructorsImages[2].src}`}
-                  alt={data.instructorsImages[2].alt}
-                  className="instructor-img"
-                />
-              </div>
-              <div className="instructor-info">
-                <h3>Thomas e Giovanni</h3>
-                <p className="maestro-role">Allenatore e Aspirante Allenatore</p>
-              </div>
-            </div>
-          </ScrollSection>
-        </div>
-      </section>
-
-      <section className="section-dark section">
+      <section className="section" style={{ paddingBottom: 0 }}>
         <ScrollSection className="storia-content">
-          <h2 className="section-title brush-stroke-heading" style={{ color: '#fff' }}>
+          <h2 className="section-title brush-stroke-heading">
             La Nostra Storia
           </h2>
-          <div className="text-content text-content--light">
+          <div className="text-content">
             <p>
               La passione per il judo dei nostri maestri, Paolino Tarocco e Marco Bertolotto, inizia
               molti anni fa proprio a Bovolone.
@@ -138,21 +70,56 @@ const Dojo = () => {
               qualifica che anche Marco consegue nel 2000. E matura così nei due amici il desiderio
               di aprire una propria palestra.
             </p>
-
-            <div style={{ marginTop: '3rem', textAlign: 'center' }}>
-              <Link
-                to="/cinture-nere"
-                className="btn-primary"
-                style={{ display: 'inline-flex', padding: '1rem 2rem', fontSize: '1.1rem' }}
-              >
-                Albo d'Onore delle Cinture Nere
-              </Link>
-            </div>
           </div>
         </ScrollSection>
       </section>
 
-      <section className="section">
+      <section className="section" style={{ paddingBottom: 0 }}>
+        <ScrollSection>
+          <h2 className="section-title brush-stroke-heading">Il Nostro Staff Tecnico</h2>
+        </ScrollSection>
+
+        <div className="instructors-grid">
+          {data.instructors.map((instructor, index) => {
+            const hasImage = !!instructor.image;
+            // Calcola gli indici solo per le immagini valide
+            const lightboxImages = data.instructors
+              .filter(i => !!i.image)
+              .map(i => ({ src: i.image, alt: i.name }));
+            const imageIndex = hasImage ? lightboxImages.findIndex(img => img.src === instructor.image) : -1;
+
+            return (
+              <ScrollSection delay={index * 100} key={index}>
+                <div
+                  className={`instructor-card ${hasImage ? '' : 'no-image'}`}
+                  onClick={hasImage ? () => openLightbox(lightboxImages, imageIndex) : undefined}
+                  style={{ cursor: hasImage ? 'zoom-in' : 'default' }}
+                >
+                  <div className="instructor-img-wrapper">
+                    {hasImage ? (
+                      <img
+                        src={`${import.meta.env.BASE_URL}${instructor.image}`}
+                        alt={instructor.name}
+                        className="instructor-img"
+                      />
+                    ) : (
+                      <div className="instructor-placeholder">
+                        <span className="placeholder-icon">🥋</span>
+                      </div>
+                    )}
+                  </div>
+                  <div className="instructor-info">
+                    <h3>{instructor.name}</h3>
+                    <p className="maestro-role">{instructor.role}</p>
+                  </div>
+                </div>
+              </ScrollSection>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="section" style={{ paddingBottom: '12rem' }}>
         <ScrollSection>
           <h2 className="section-title brush-stroke-heading">La Nostra Palestra</h2>
           <div className="images-grid">
