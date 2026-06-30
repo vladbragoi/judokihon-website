@@ -47,8 +47,9 @@ const PrivacyPolicy = () => {
           </h2>
           <p>
             Il titolare del trattamento dei dati delle persone identificate o identificabili
-            consultando questo sito web è l'A.S.D. Judo Kihon, sede in via Piave n°1 - Bovolone
-            (VR).
+            consultando questo sito web è l'A.S.D. Judo Kihon, sede in via Piave n°1 - Bovolone (VR).
+            <br />
+            <strong>Indirizzo email del Titolare:</strong> <a href="mailto:info@judokihon.it" style={{ color: 'var(--accent-color)', textDecoration: 'underline' }}>info@judokihon.it</a>
           </p>
 
           <h2
@@ -124,6 +125,26 @@ const PrivacyPolicy = () => {
             commerciali della stessa, al fine di eseguire gli ulteriori trattamenti in conformità
             agli scopi per i quali i dati sono stati originariamente raccolti.
           </p>
+
+          <h2
+            className="section-title text-left brush-stroke-heading"
+            style={{ marginTop: '3rem' }}
+          >
+            Servizi di Terze Parti
+          </h2>
+          <p>
+            Per garantire il corretto funzionamento e una visualizzazione ottimale, questo sito si appoggia ai seguenti servizi di terze parti:
+          </p>
+          <ul style={{ paddingLeft: '1.5rem', marginBottom: '1.5rem', lineHeight: '1.6' }}>
+            <li style={{ marginBottom: '0.5rem' }}>
+              <strong>Google Fonts (Google Ireland Limited)</strong>: Servizio di visualizzazione di stili di carattere. Dati Personali trattati: Dati di utilizzo (indirizzo IP). 
+              <br/><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-color)', textDecoration: 'underline' }}>Consulta la Privacy Policy di Google</a>
+            </li>
+            <li style={{ marginBottom: '0.5rem' }}>
+              <strong>GitHub Pages (GitHub, Inc.)</strong>: Servizio di hosting web che ospita fisicamente i file del sito. Dati Personali trattati: Dati di utilizzo (es. indirizzi IP a fini di sicurezza del server). 
+              <br/><a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-color)', textDecoration: 'underline' }}>Consulta la Privacy Policy di GitHub</a>
+            </li>
+          </ul>
 
           <h2
             className="section-title text-left brush-stroke-heading"
